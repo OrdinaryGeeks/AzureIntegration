@@ -1,0 +1,23 @@
+{
+  "name": "cbtscreenshottask",
+  "version": "1.0.0",
+  "description": "Task to start a screenshot test on your CBT account.",
+  "main": "index.js",
+  "dependencies": {
+    "azure-pipelines-task-lib": "^2.9.3",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.7",
+    "sync-request": "^6.1.0",
+    "vss-web-extension-sdk": "^5.141.0"
+  },
+  "devDependencies": {
+    "@types/node": "^12.11.7",
+    "@types/q": "^1.5.2",
+    "@types/request-promise-native": "^1.0.17"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nathaniel Stokes III",
+  "license": "ISC"
+}

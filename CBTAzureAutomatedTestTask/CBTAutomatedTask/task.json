@@ -1,0 +1,71 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
+    "id": "2daeb41c-3a8d-498f-87c2-0510149fd632",
+    "name": "CBTScreenshotTest",
+    "friendlyName": "Cross Browser Testing Screenshot Test",
+    "description": "Task to start an screenshot test with Cross Browser Testing",
+    "helpMarkDown": "",
+    "category": "Utility",
+    "author": "Nathaniel Stokes",
+    "version": {
+        "Major": 0,
+        "Minor": 1,
+        "Patch": 0
+    },
+    "instanceNameFormat": "CBT Screenshot Test",
+    "inputs": [
+        {
+            "name": "username",
+            "type": "string",
+            "label": "platform",
+            "defaultValue": "Please Enter Your Username",
+            "required": true,
+            "helpMarkDown": "Enter Your Username"
+        },
+        {
+            "name": "url",
+            "type": "string",
+            "label": "url"
+            "defaultValue": "Please Enter The URL you want to test"
+            "required": true,
+            "helpMarkDown": "Enter Your URL"
+        },
+        {
+            "name": "authkey",
+            "type": "string",
+            "label": "authkey",
+            "defaultValue": "Please Enter Your Authkey",
+            "required": true,
+            "helpMarkDown": "Enter Your Authkey"
+        },
+        {
+            "name": "browsers",
+            "type": "string",
+            "label": browsers
+            "defaultValue": "Please Enter Your Browsers",
+            "required": true,
+            "helpMarkDown": "Enter Your Browsers"
+        },
+        {
+            "name": "platform",
+            "type": "string",
+            "label": "platform",
+            "defaultValue": "Please Enter Your Operating System (Platform",
+            "required": true,
+            "helpMarkDown": "Enter Your Operating System (Platform)"
+        },
+        {
+            "name": "screenResolution",
+            "type": "string",
+            "label": "screen Resolution",
+            "defaultValue": "Please Enter Your Screen Resolution",
+            "required": true,
+            "helpMarkDown": "Enter Your Operating System (Platform)"
+        }
+    ],
+    "execution": {
+        "Node10": {
+            "target": "index.js"
+        }
+    }
+}

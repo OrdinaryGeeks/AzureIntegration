@@ -1,0 +1,36 @@
+{
+    "manifestVersion": 1,
+    "id": "CBT-Credentials-Task",
+    "name": "CBT Credentials Task",
+    "version": "0.0.1",
+    "publisher": "NathanielStokes3",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],    
+    "description": "Task to set the username and authkey for Cross Browser Testing",
+    "categories": [
+        "Azure Pipelines"
+    ],
+    "icons": {
+        "default": "images/CBTIcon.png"        
+    },
+    "files": [
+        {
+            "path": "CBTCredentialsTask"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "custom-build-release-task",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "CBTCredentialsTask"
+            }
+        }
+    ]
+}

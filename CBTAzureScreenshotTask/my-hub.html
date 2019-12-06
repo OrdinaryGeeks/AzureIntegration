@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+   <script src="node_modules/vss-web-extension-sdk/lib/VSS.SDK.min.js"></script>
+   <style>
+       body {
+           background-color: rgb(0, 67, 117);
+           color: white;
+           margin: 10px;    
+           font-family: "Segoe UI VSS (Regular)","-apple-system",BlinkMacSystemFont,"Segoe UI",sans-serif;
+       }
+   </style>
+   <script type="text/javascript">
+       VSS.init({
+           // Our extension explicitly notifies the host when we're done loading
+            explicitNOtifyLoaded: true,
+
+            // We are using some Azure DevOps Services APIs, so we need the module loader to load them in
+    usePlatformScripts: true,
+usePlatformStyles: true});
+
+// Load Azure DevOps Services controls
+VSS.require(["VSS/Controls", "VSS/Controls/Grids"],
+ 	function (Controls, Grids) {
+
+ 	// Initialize the grid control with two columns, "key" and "value"
+    var dataSource = [];
+    dataSource.push({key: "key", value: "value"});
+
+    Controls.create(Grids.Grid, $("#grid-container"), {
+        height: "1000px", // Explicit height is required for a Grid control
+        columns: [
+            // text is the column header text. 
+            // index is the key into the source object to find the data for this column
+            // width is the width of the column, in pixels
+            { text: "Property key", index: "key", width: 150 },
+            { text: "Property value", index: "value", width: 600 }
+        ],
+        // This data source is rendered into the Grid columns defined above
+        source: dataSource
+    });
+ 	VSS.notifyLoadSucceeded();
+ });
+       VSS.ready(function() {
+           document.getElementById("name").innerText = VSS.getWebContext().user.name;
+       });
+   </script>
+</head>
+<body>        
+        <div id="grid-container"></div>
+   <h1>Hello, <span id="name"></span></h1>
+</body>
+</html>

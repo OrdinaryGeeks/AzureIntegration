@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <script src="node_modules/vss-web-extension-sdk/lib/VSS.SDK.js"></script>
+    
+    <script>
+        VSS.init({ usePlatformScripts: true });
+
+        VSS.ready(function() {
+              require(["scripts/main.js"], function () { });
+        });
+    </script>
+
+    <div class="sample-container"/>
+
+</body>
+</html> 

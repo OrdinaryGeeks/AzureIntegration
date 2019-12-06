@@ -1,0 +1,64 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
+    "id": "24b22c50-1283-4de9-a450-4ce9bfe49312",
+    "name": "CBTScreenshotTask",
+    "friendlyName": "Cross Browser Testing Screenshot Task",
+    "description": "Task to run a ScreenShot task on CrossBrowserTesting accounts",
+    "helpMarkDown": "",
+    "category": "Utility",
+    "author": "Nathaniel Stokes",
+    "version": {
+        "Major": 0,
+        "Minor": 1,
+        "Patch": 0
+    },
+    "instanceNameFormat": "CBT Screenhot",
+    "inputs": [
+        {
+            "name": "CBTService",
+            "type": "connectedService:CBTScreenshotEndpoint",
+            "label": "CBT service/server end point",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "Select the CBT end point to use. If needed,selecton 'manage', and add a new service endpoint of type 'CBT server connection'"
+          },
+          {
+            "name": "project",
+            "type": "pickList",
+            "label": "CBT Project",
+            "required": true,
+            "helpMarkDown": "Select the name of the CBT  Project to analyze.",
+            "properties": {
+              "EditableOptions": "True"
+            }
+          },
+        {
+            "name": "username",
+            "type": "string",
+            "label": "username",
+            "defaultValue": "Please Enter Your Username",
+            "required": true,
+            "helpMarkDown": "Enter Your Username"
+        },
+        {
+            "name": "authkey",
+            "type": "string",
+            "label": "authkey",
+            "defaultValue": "Please Enter Your Authkey",
+            "required": true,
+            "helpMarkDown": "Enter Your Authkey"
+        }
+    ],
+    "dataSourceBindings": [
+        {
+            "target": "Browser",
+            "endpointId": "$(CBTService)",
+            "dataSourceName" :  "CBT Projects"
+        }
+    ],
+    "execution": {
+        "Node10": {
+            "target": "index.js"
+        }
+    }
+}

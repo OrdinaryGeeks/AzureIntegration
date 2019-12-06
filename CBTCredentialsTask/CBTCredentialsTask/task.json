@@ -1,0 +1,39 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
+    "id": "e1770485-79e5-4e73-baf9-bb92172d13e5",
+    "name": "CBTCredentials",
+    "friendlyName": "Cross Browser Testing Credentials",
+    "description": "Task to enter and save credentials for accessing CrossBrowserTesting accounts",
+    "helpMarkDown": "",
+    "category": "Utility",
+    "author": "Nathaniel Stokes",
+    "version": {
+        "Major": 0,
+        "Minor": 1,
+        "Patch": 0
+    },
+    "instanceNameFormat": "CBT Credentials",
+    "inputs": [
+        {
+            "name": "username",
+            "type": "string",
+            "label": "username",
+            "defaultValue": "Please Enter Your Username",
+            "required": true,
+            "helpMarkDown": "Enter Your Username"
+        },
+        {
+            "name": "authkey",
+            "type": "string",
+            "label": "authkey",
+            "defaultValue": "Please Enter Your Authkey",
+            "required": true,
+            "helpMarkDown": "Enter Your Authkey"
+        }
+    ],
+    "execution": {
+        "Node10": {
+            "target": "index.js"
+        }
+    }
+}
